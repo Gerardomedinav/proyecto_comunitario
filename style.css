@@ -296,7 +296,7 @@ blockquote {
 
 .huellas-nav::after {
     left: 33%;
-    top: 17%;
+    top: 30%;
     animation-delay: 1.2s;
 }
 /* El media query para móviles está después de la animación */
@@ -320,6 +320,12 @@ blockquote {
     width: 50px;
     height: 50px;
     background: url('img/huella.png') center/contain no-repeat;
-    animation: pisadas 2s infinite cubic-bezier(0.4,0,0.6,1);
+   
     filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.3));
+}
+.huellas-nav::before{
+    animation: pisadas 4s infinite cubic-bezier(0.4,0,0.6,1);
+}
+.huellas-nav::after {
+    animation: pisadas 2s infinite cubic-bezier(0.4,0,0.6,1);
 }
