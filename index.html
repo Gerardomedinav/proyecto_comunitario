@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Construimos refugios ecológicos para perros callejeros en Formosa Capital con materiales reciclados">
+    <meta name="description"
+        content="Construimos refugios ecológicos para perros callejeros en Formosa Capital con materiales reciclados">
     <title>Refugios Caninos Formosa - Casas Ecológicas para Perros Callejeros</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
+
 </head>
+
 <body>
     <header class="cabecera huellas-nav">
         <nav>
             <div class="logo">
-                <img src="img/img_41.jpg" alt="Logo Refugios Caninos Formosa">
+                <img src="img/logo.svg" alt="Logo Refugios Caninos Formosa">
             </div>
             <ul class="menu-nav">
                 <li><a href="#inicio">Inicio</a></li>
@@ -35,32 +38,66 @@
     <section class="concientizacion">
         <div class="contenedor-texto">
             <blockquote>
-                <p>"Cuando llega el crudo invierno todos pasamos frío. Por un momento póngase en el lugar de los animales que viven en las calles, que sufren día tras día las inclemencias sin nada que les proteja. Por eso, hay que aplaudir las iniciativas solidarias como esta, hacer casitas con materiales muy básicos para proteger al que nada tiene y te da todo."</p>
-                
-                <p>"Estas casas para los animales en situación de calle son instaladas en la vía pública con el permiso de los vecinos, muchos de los cuales se implican también en el cuidado del animal y tratan de que las autoridades pertinentes no las retiren."</p>
+                <p>"Cuando llega el crudo invierno todos pasamos frío. Por un momento póngase en el lugar de los
+                    animales que viven en las calles, que sufren día tras día las inclemencias sin nada que les proteja.
+                    Por eso, hay que aplaudir las iniciativas solidarias como esta, hacer casitas con materiales muy
+                    básicos para proteger al que nada tiene y te da todo."</p>
+
+                <p>"Estas casas para los animales en situación de calle son instaladas en la vía pública con el permiso
+                    de los vecinos, muchos de los cuales se implican también en el cuidado del animal y tratan de que
+                    las autoridades pertinentes no las retiren."</p>
             </blockquote>
         </div>
     </section>
 
+
     <section class="galeria" id="proyectos">
         <h2>Nuestros Refugios</h2>
-        <div class="grid-galeria">
-            <div class="item-galeria">
-                <img src="img/img_21.jpg" alt="Refugio terminado con palet" loading="lazy">
-                <div class="info-galeria">
-                    <h3>Materiales Reciclados</h3>
-                    <p>Bolsas plásticas, palets y telas reutilizadas</p>
+        <div class="galeria-marquesina">
+            <div class="marquesina-container">
+                <!-- Duplicar elementos para efecto continuo -->
+                <div class="item-marquesina" data-modal="refugio1">
+                    <img src="img/img_21.jpg" alt="Refugio terminado con palet" loading="lazy">
+                    <div class="info-marquesina">
+                        <h3>Materiales Reciclados</h3>
+                        <p>Bolsas plásticas, palets y telas reutilizadas</p>
+                    </div>
                 </div>
-            </div>
-            <div class="item-galeria">
-                <img src="img/img_51.jpg" alt="Voluntarios construyendo refugio" loading="lazy">
-                <div class="info-galeria">
-                    <h3>Trabajo Comunitario</h3>
-                    <p>Jornadas de construcción colaborativa</p>
+
+                <div class="item-marquesina" data-modal="refugio2">
+                    <img src="img/img_51.jpg" alt="Voluntarios construyendo refugio" loading="lazy">
+                    <div class="info-marquesina">
+                        <h3>Trabajo Comunitario</h3>
+                        <p>Jornadas de construcción colaborativa</p>
+                    </div>
+                </div>
+
+                <!-- Repetir elementos para scroll infinito -->
+                <div class="item-marquesina" data-modal="refugio1">
+                    <img src="img/img_21.jpg" alt="Refugio terminado con palet" loading="lazy">
+                    <div class="info-marquesina">
+                        <h3>Materiales Reciclados</h3>
+                        <p>Bolsas plásticas, palets y telas reutilizadas</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal Galería -->
+    <div id="modalGaleria" class="modal-galeria">
+        <div class="modal-contenido-galeria">
+            <span class="cerrar-modal-galeria">&times;</span>
+            <div class="modal-imagen">
+                <img id="modalImg" src="" alt="" loading="lazy">
+            </div>
+            <div class="modal-texto">
+                <h2 id="modalTitulo"></h2>
+                <p id="modalDescripcion"></p>
+                <div id="detallesAdicionales"></div>
+            </div>
+        </div>
+    </div>
 
     <section class="como-ayudar" id="colaborar">
         <h2>¿Cómo Puedes Participar?</h2>
@@ -98,4 +135,62 @@
         </div>
     </footer>
 </body>
+<script>
+    // Configuración de contenido para el modal
+    const contenidoModal = {
+      refugio1: {
+        titulo: "Técnica de Construcción Ecológica",
+        descripcion: "Detalles sobre el proceso de reciclaje de materiales:",
+        contenido: `
+          <ul>
+            <li>Palets tratados con sellador natural</li>
+            <li>Capas termoaislantes con plástico reciclado</li>
+            <li>Sistema de captación de agua lluvia</li>
+          </ul>
+          <p>Tiempo de construcción promedio: 120 horas</p>
+        `,
+        imagen: "img/img_21.jpg"
+      },
+      refugio2: {
+        titulo: "Dinámica de Trabajo Colectivo",
+        descripcion: "Organización de las jornadas:",
+        contenido: `
+          <ul>
+            <li>Grupos de 10 voluntarios por turno</li>
+            <li>Capacitación previa en técnicas seguras</li>
+            <li>Protocolos de seguridad certificados</li>
+          </ul>
+        `,
+        imagen: "img/img_51.jpg"
+      }
+    };
+    
+    // Eventos de interacción
+    document.querySelectorAll('.item-marquesina').forEach(item => {
+      item.addEventListener('click', () => {
+        const modalData = contenidoModal[item.dataset.modal];
+        const modal = document.getElementById('modalGaleria');
+        
+        document.getElementById('modalTitulo').textContent = modalData.titulo;
+        document.getElementById('modalDescripcion').textContent = modalData.descripcion;
+        document.getElementById('detallesAdicionales').innerHTML = modalData.contenido;
+        document.getElementById('modalImg').src = modalData.imagen;
+        
+        modal.style.display = 'block';
+      });
+    });
+    
+    // Cerrar modal
+    document.querySelector('.cerrar-modal-galeria').addEventListener('click', () => {
+      document.getElementById('modalGaleria').style.display = 'none';
+    });
+    
+    // Cerrar al hacer clic fuera del modal
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('modalGaleria');
+      if (e.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+    </script>
 </html>
